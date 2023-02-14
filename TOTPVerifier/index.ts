@@ -1,10 +1,10 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 
 import { authenticator as totp} from "otplib";
+
 export class TOTPVerifier
   implements ComponentFramework.StandardControl<IInputs, IOutputs>
   {
-    private _notifyOutputChanged: () => void;
     private _container: HTMLDivElement;
     private div1: HTMLDivElement;
     private div2: HTMLDivElement;
@@ -29,8 +29,6 @@ export class TOTPVerifier
       state: ComponentFramework.Dictionary,
       container: HTMLDivElement
     ): void {
-      // Add control initialization code
-      this._notifyOutputChanged = notifyOutputChanged;
       this._container = container;
       this.secret = context.parameters.Secret.raw || "";
   

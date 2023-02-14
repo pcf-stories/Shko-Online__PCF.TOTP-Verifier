@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 /**
@@ -9,19 +7,17 @@ const revision = require('child_process').execSync('git rev-parse HEAD').toStrin
 /**
  * This is the public endpoint of your sourcemap repository 
  */
-const sourcemapRepository = 'https://sourcemaps.xrm.al/PCF/TOTPVerifierSourcemaps/';
+const sourcemapRepository = 'https://sourcemaps.xrm.al/PCF/TOTPVerifier/';
 
 module.exports = {
   devtool: false,
   resolve: {
     fallback: {
       crypto: require.resolve("crypto-browserify"),
-      //otplib: require.resolve("@otplib/preset-browser"),
       stream: require.resolve('stream-browserify'),
 
     },
   },
-
   plugins: [
     new webpack.optimize.LimitChunkCountPlugin({
       // prevent creating split bundles, since the PCF runtime cannot handle chunked bundles
