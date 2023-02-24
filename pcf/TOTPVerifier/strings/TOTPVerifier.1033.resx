@@ -117,56 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TOTPVerifier" xml:space="preserve">
+  <data name="TOTPVerifier_Display_Key" xml:space="preserve">
     <value> Verifier Component</value>
     <comment/>
   </data>
-  <data name="TOTPVerifier description" xml:space="preserve">
+  <data name="TOTPVerifier_Desc_Key" xml:space="preserve">
     <value>Component description</value>
     <comment/>
   </data>
-  <data name="verifierDataSet" xml:space="preserve">
-    <value>Dataset  property of component</value>
-    <comment>Validate succes of verifier</comment>
-  </data>
   <data name="Verifier_DataSet_Display_Key" xml:space="preserve">
-    <value>Description of verifierDataset</value>
-    <comment/>
+    <value>Dataset with the success and failure messages</value>
   </data>
-  <data name="Success" xml:space="preserve">
-    <value>PropertySet of verifierDataSet</value>
-    <comment/>
+  <data name="Verifier_DataSet_Desc_Key" xml:space="preserve">
+    <value>Dataset with the success and failure messages</value>
   </data>
   <data name="Success_Display_Key" xml:space="preserve">
-    <value>Display key of Success </value>
+    <value>Success</value>
     <comment/>
   </data>
   <data name="Success_Desc_Key" xml:space="preserve">
     <value>Description of Success</value>
     <comment/>
   </data>
-  <data name="Message" xml:space="preserve">
-    <value>PropertySet of verifierDataSet</value>
-    <comment/>
-  </data>
   <data name="Message_Display_Key" xml:space="preserve">
-    <value>Display key of Message</value>
+    <value>Message</value>
     <comment/>
   </data>
   <data name="Message_Desc_Key" xml:space="preserve">
     <value>Description of Message</value>
     <comment/>
   </data>
-  <data name="Secret" xml:space="preserve">
-    <value>Property of component</value>
-    <comment>Secret of user</comment>
-  </data>
   <data name="Secret_Display_Key" xml:space="preserve">
-    <value>Display keyof secret</value>
-    <comment/>
+    <value>Secret</value>
   </data>
   <data name="Secret_Desc_Key" xml:space="preserve">
-    <value>Description of Secret</value>
-    <comment/>
+    <value>The secret that will be used to calculate the TOTP</value>
   </data>
 </root>
