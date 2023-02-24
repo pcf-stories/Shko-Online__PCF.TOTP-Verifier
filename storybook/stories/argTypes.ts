@@ -30,7 +30,7 @@ const getFromResource = (key: string) => {
 
 const secret_Name = getFromResource('Secret_Display_Key');
 const secret_Description = getFromResource('Secret_Desc_Key');
-const dataset_Name = getFromResource('Verifier_DataSet_Display_Key');
+// const dataset_Name = getFromResource('Verifier_DataSet_Display_Key');
 const dataset_Description = getFromResource('Verifier_DataSet_Desc_Key');
 
 export const argTypes: Partial<ArgTypes<StoryArgs>> = {
@@ -40,8 +40,13 @@ export const argTypes: Partial<ArgTypes<StoryArgs>> = {
     type: 'string',
   },
   datasetItems: {
-    name: dataset_Name,
+    //name: dataset_Name,
     description: dataset_Description,
-    type: 'symbol',
+    control: 'object',
+    table: {
+      category: 'Dataset'
+    }
+
   },
 };
+

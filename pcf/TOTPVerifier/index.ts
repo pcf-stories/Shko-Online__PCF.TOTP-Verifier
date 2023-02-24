@@ -151,12 +151,13 @@ export class TOTPVerifier implements ComponentFramework.StandardControl<IInputs,
     this.inputHidden.value = compiledOtp;
     this.token = compiledOtp;
     const tokenCheck = totp.check(this.token, this.secret);
-    Object.getOwnPropertyNames(context.parameters.verifierDataSet.records).forEach((recordId) => {
-      if (context.parameters.verifierDataSet.records[recordId].getValue('Success') === tokenCheck) {
-        const entityReference: ComponentFramework.EntityReference =
-          context.parameters.verifierDataSet.records[recordId].getNamedReference();
+    context.parameters.verifierDataSet.sortedRecordIds.forEach((recordId) => {
+      const record = context.parameters.verifierDataSet.records[recordId];
+      if (record.getValue('Success') === tokenCheck) {
+        const entityReference: ComponentFramework.EntityReference = record.getNamedReference();
         context.parameters.verifierDataSet.openDatasetItem(entityReference);
       }
     });
   }
 }
+

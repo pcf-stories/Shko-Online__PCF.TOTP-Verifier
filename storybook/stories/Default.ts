@@ -22,6 +22,6 @@ export const Default = Template.bind({}) as StoryObj<StoryArgs>;
 
 Default.parameters = {
   controls: {
-    include: ['Application', 'Secret', 'User'],
+    include: ['datasetItems', 'Secret'],
   },
 };

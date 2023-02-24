@@ -23,7 +23,7 @@ import { Decorator } from './Decorator';
 import '@shko.online/totp-verifier/TOTPVerifier/css/TOTPVerifier.css';
 
 export default {
-  title: 'TOTP QR Generator',
+  title: 'TOTP Verifier',
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes,
   args: defaultArgs,
