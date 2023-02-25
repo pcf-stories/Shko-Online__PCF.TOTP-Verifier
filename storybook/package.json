@@ -7,7 +7,7 @@
         "build-storybook": "storybook build"
     },
     "devDependencies": {
-        "@shko.online/componentframework-mock": "^0.1.18",
+        "@shko.online/componentframework-mock": "^0.1.20",
         "@storybook/addon-actions": "^7.0.0-beta.43",
         "@storybook/addon-essentials": "^7.0.0-beta.43",
         "@storybook/addon-interactions": "^7.0.0-beta.43",

@@ -17,16 +17,7 @@
 import { ArgTypes } from '@storybook/react';
 import { StoryArgs } from './StoryArgs';
 
-import resource from 'raw-loader!!@shko.online/totp-verifier/TOTPVerifier/strings/TOTPVerifier.1033.resx';
-const xmlResource = new DOMParser().parseFromString(resource, 'text/xml');
-const elements = xmlResource.getElementsByTagNameNS('', 'data');
-const getFromResource = (key: string) => {
-  for (let i = 0; i < elements.length; i++) {
-    if (elements[i].getAttribute('name') === key) {
-      return elements[i].getElementsByTagName('value')[0].innerHTML?.trim();
-    }
-  }
-};
+import { getFromResource } from './getFromResource';
 
 const secret_Name = getFromResource('Secret_Display_Key');
 const secret_Description = getFromResource('Secret_Desc_Key');
@@ -44,9 +35,11 @@ export const argTypes: Partial<ArgTypes<StoryArgs>> = {
     description: dataset_Description,
     control: 'object',
     table: {
-      category: 'Dataset'
-    }
-
+      category: 'Dataset',
+    },
+  },
+  lastSubmission: {
+    control: false,
   },
 };
 

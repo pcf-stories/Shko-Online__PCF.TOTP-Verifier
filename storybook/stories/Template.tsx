@@ -18,7 +18,11 @@ import React from 'react';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useArgs } from '@storybook/client-api';
-import { ComponentFrameworkMockGenerator, DataSetMock, ShkoOnline, StringPropertyMock } from '@shko.online/componentframework-mock';
+import {
+  ComponentFrameworkMockGenerator,
+  DataSetMock,
+  StringPropertyMock,
+} from '@shko.online/componentframework-mock';
 
 import type { IInputs, IOutputs } from '@shko.online/totp-verifier/TOTPVerifier/generated/ManifestTypes';
 import type { StoryFn } from '@storybook/react';
@@ -52,7 +56,13 @@ const Template: StoryFn<StoryArgs> = ({}) => {
 
     mockGenerator.context._parameters.verifierDataSet._InitItems(args.datasetItems);
 
-    mockGenerator.context._parameters.verifierDataSet.openDatasetItem.callsFake(item=>console.log(item));
+    mockGenerator.context._parameters.verifierDataSet.openDatasetItem.callsFake((item) => {
+      var lastSubmission = {
+        Message: mockGenerator.context._parameters.verifierDataSet.records[item.id.guid].getValue('Message') as string,
+        Success: mockGenerator.context._parameters.verifierDataSet.records[item.id.guid].getValue('Success') as boolean,
+      };
+      updateArgs({ lastSubmission });
+    });
 
     mockGenerator.ExecuteInit();
     return mockGenerator;
@@ -72,3 +82,4 @@ const Template: StoryFn<StoryArgs> = ({}) => {
 };
 
 export default Template;
+

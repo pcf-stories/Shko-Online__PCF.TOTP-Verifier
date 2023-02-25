@@ -14,13 +14,16 @@
    limitations under the License.
 */
 
+interface DatasetItem {
+  Success: boolean;
+  Message: string;
+}
+
 export interface StoryArgs {
   isVisible: boolean;
   isDisabled: boolean;
   Secret: string;
-  datasetItems: {
-    id: string,
-    Success: boolean;
-    Message: string;
-  }[];
+  datasetItems: DatasetItem[];
+  lastSubmission?: DatasetItem;
 }
+

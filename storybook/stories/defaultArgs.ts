@@ -21,7 +21,7 @@ export const defaultArgs: Partial<StoryArgs> = {
   isDisabled: false,
   Secret: 'LUFCAKIIEUTTA7RQ',
   datasetItems: [
-    { id: '1', Success: true, Message: 'You passed the test' },
-    { id: '2', Success: false, Message: 'You failed' },
+    { Success: true, Message: 'You passed the test' },
+    { Success: false, Message: 'You failed' },
   ],
 };

@@ -12,6 +12,7 @@
         "tsconfig-paths-webpack-plugin": "^4.0.0"
     },
     "scripts": {
+        "storybook": "npm run storybook -w storybook",
         "postinstall": "node uglyWorkaround.js"
     }
 }
