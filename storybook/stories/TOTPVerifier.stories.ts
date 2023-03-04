@@ -23,7 +23,7 @@ import { Decorator } from './Decorator';
 import '@shko.online/totp-verifier/TOTPVerifier/css/TOTPVerifier.css';
 
 export default {
-  title: 'TOTP Verifier',
+  title: 'TOTP Verifier/TOTP Verifier',
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes,
   args: defaultArgs,
@@ -34,5 +34,5 @@ export default {
   },
 } as Meta<StoryArgs>;
 
-export { Default } from './Default';
+export { Default as TOTPVerifier } from './Default';
 
