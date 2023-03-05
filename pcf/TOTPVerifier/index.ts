@@ -28,19 +28,17 @@ export class TOTPVerifier implements ComponentFramework.StandardControl<IInputs,
     container: HTMLDivElement,
   ): void {
     this._container = container;
+    container.className = 'TOTPVerifier';
     this.secret = context.parameters.Secret.raw || '';
 
     this.div2 = document.createElement('div');
-    this.div2.setAttribute('class', 'flex flex-row w-full h-full');
+    this.div2.className = 'flex flex-row w-full h-full';
     this.div2.setAttribute('id', 'OTPInput');
 
     for (let i = 0; i < 6; i++) {
       const inputField = document.createElement('input');
-      inputField.setAttribute(
-        'class',
-        'w-full h-full justify-self-stretch h-auto bg-gray-100 border-gray-100 outline-none focus:bg-gray-200 text-center rounded focus:border-blue-400 focus:shadow-outline',
-      );
-      inputField.setAttribute('id', 'otp-field');
+      inputField.className =
+        'w-full h-full justify-self-stretch h-auto bg-gray-100 border-gray-100 outline-none focus:bg-gray-200 text-center rounded focus:border-blue-400 focus:shadow-outline';
       inputField.setAttribute('type', 'number');
       inputField.style.cssText = 'color: transparent; text-shadow: 0 0 0 gray;';
       inputField.maxLength = 1;
@@ -83,7 +81,7 @@ export class TOTPVerifier implements ComponentFramework.StandardControl<IInputs,
     this._container.style.height = '100%';
     this._container.appendChild(this.div1);
 
-    const inputs = document.querySelectorAll<HTMLInputElement>('#OTPInput > *[id]');
+    const inputs = document.querySelectorAll<HTMLInputElement>('#OTPInput > input');
     for (let i = 0; i < inputs.length; i++) {
       inputs[i].addEventListener('keydown', (evt) => {
         const event = evt as KeyboardEvent;
@@ -141,7 +139,7 @@ export class TOTPVerifier implements ComponentFramework.StandardControl<IInputs,
 
   public destroy(): void {}
   public check(context: ComponentFramework.Context<IInputs>): void {
-    const inputs = document.querySelectorAll<HTMLInputElement>('#OTPInput > *[id]');
+    const inputs = document.querySelectorAll<HTMLInputElement>('#OTPInput > input');
     let compiledOtp = '';
     for (let i = 0; i < inputs.length; i++) {
       compiledOtp += inputs[i].value;
