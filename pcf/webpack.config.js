@@ -20,7 +20,8 @@ module.exports = {
     new webpack.SourceMapDevToolPlugin({
       /* This instructs your bundle.js to read the correct revision sourcemaps from the repository */
       append: `\n//# sourceMappingURL=${sourcemapRepository}${revision}/[url]`,
-      filename: '[name].map',
+      filename: '../../[name].map',
+      fileContext: './'
     }),
     new webpack.ProvidePlugin({
       Buffer: ['buffer/', 'Buffer']
