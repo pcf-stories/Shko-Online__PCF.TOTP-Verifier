@@ -14,6 +14,7 @@ const config: StorybookConfig = {
     name: '@storybook/html-webpack5',
     options: {},
   },
+  staticDirs: ['./public'],
   webpackFinal: async (config) => {
     config.devtool = false;
     if (config.resolve) {
