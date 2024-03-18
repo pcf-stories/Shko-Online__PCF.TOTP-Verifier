@@ -11,7 +11,8 @@
     "start": "pcf-scripts start",
     "refreshTypes": "pcf-scripts refreshTypes",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.23.3",
@@ -30,6 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
     "child_process": "^1.0.2",
+    "chromatic": "^11.0.8",
     "crypto-browserify": "^3.12.0",
     "eslint": "^8.24.0",
     "eslint-plugin-import": "^2.26.0",
