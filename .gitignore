@@ -15,3 +15,5 @@ pcf/obj
 
 # MSBuild Binary and Structured Log
 *.binlog
+
+*storybook.log

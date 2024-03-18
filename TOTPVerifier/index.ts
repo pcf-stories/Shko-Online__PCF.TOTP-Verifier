@@ -11,6 +11,8 @@ export class TOTPVerifier implements ComponentFramework.StandardControl<IInputs,
   private inputHidden: HTMLInputElement;
   private token: string;
   private secret: string;
+
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
 
   /**
@@ -137,6 +139,7 @@ export class TOTPVerifier implements ComponentFramework.StandardControl<IInputs,
     return {};
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   public destroy(): void {}
   public check(context: ComponentFramework.Context<IInputs>): void {
     const inputs = document.querySelectorAll<HTMLInputElement>('#OTPInput > input');
@@ -158,4 +161,3 @@ export class TOTPVerifier implements ComponentFramework.StandardControl<IInputs,
     });
   }
 }
-

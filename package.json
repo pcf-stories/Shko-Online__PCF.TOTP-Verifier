@@ -1,20 +1,54 @@
 {
-    "name": "@shko.online/totp-verifier-workspace",
-    "private": true,
-    "workspaces": [
-        "pcf",
-        "storybook"
-    ],
-    "devDependencies": {
-        "prettier": "^2.8.4",
-        "raw-loader": "^4.0.2",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "replace-in-file": "^6.3.5",
-        "tsconfig-paths-webpack-plugin": "^4.0.0"
-    },
-    "scripts": {
-        "storybook": "npm run storybook -w storybook",
-        "postinstall": "node uglyWorkaround.js"
-    }
+  "name": "@shko.online/totp-verifier",
+  "version": "1.0.0",
+  "description": "Project containing your PowerApps Component Framework (PCF) control.",
+  "scripts": {
+    "build": "pcf-scripts build",
+    "clean": "pcf-scripts clean",
+    "lint": "pcf-scripts lint",
+    "lint:fix": "pcf-scripts lint fix",
+    "rebuild": "pcf-scripts rebuild",
+    "start": "pcf-scripts start",
+    "refreshTypes": "pcf-scripts refreshTypes",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.23.3",
+    "@microsoft/eslint-plugin-power-apps": "^0.2.6",
+    "@shko.online/componentframework-mock": "^0.5.0",
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-interactions": "^8.0.0",
+    "@storybook/addon-links": "^8.0.0",
+    "@storybook/addon-webpack5-compiler-babel": "^3.0.3",
+    "@storybook/blocks": "^8.0.0",
+    "@storybook/html": "^8.0.0",
+    "@storybook/html-webpack5": "^8.0.0",
+    "@storybook/test": "^8.0.0",
+    "@types/node": "^18.8.2",
+    "@types/powerapps-component-framework": "^1.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "child_process": "^1.0.2",
+    "crypto-browserify": "^3.12.0",
+    "eslint": "^8.24.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.1",
+    "pcf-scripts": "^1.21.8",
+    "pcf-start": "^1.21.8",
+    "raw-loader": "^4.0.2",
+    "storybook": "^8.0.0",
+    "stream-browserify": "^3.0.0",
+    "tsconfig-paths-webpack-plugin": "^4.1.0",
+    "typescript": "^4.8.4",
+    "webpack": "^5.90.3"
+  },
+  "dependencies": {
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-storybook": "^0.8.0",
+    "otplib": "^12.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
