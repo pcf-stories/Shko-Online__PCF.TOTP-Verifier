@@ -83,7 +83,7 @@ export class TOTPVerifier implements ComponentFramework.StandardControl<IInputs,
     this._container.style.height = '100%';
     this._container.appendChild(this.div1);
 
-    const inputs = document.querySelectorAll<HTMLInputElement>('#OTPInput > input');
+    const inputs = this.div2.querySelectorAll<HTMLInputElement>('input');
     for (let i = 0; i < inputs.length; i++) {
       inputs[i].addEventListener('keydown', (evt) => {
         const event = evt as KeyboardEvent;
